@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+
+{% block title %}Editar alumno{% endblock %}
+
+{% block content %}
+<h2>Editar alumno</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Nombre</label>
+    <input type="text" name="nombre" class="input" value="{{ alumno.nombre }}" required>
+
+    <label>Apellido</label>
+    <input type="text" name="apellido" class="input" value="{{ alumno.apellido }}" required>
+
+    <label>Edad</label>
+    <input type="number" name="edad" class="input" value="{{ alumno.edad }}" required>
+
+    <button type="submit" class="btn">Actualizar</button>
+    <a href="{% url 'lista_alumnos' %}" class="btn btn-danger" style="margin-left:10px;">Cancelar</a>
+</form>
+
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .input {
+        padding: 10px;
+        border: 1px solid #b2bec3;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+    button {
+        width: max-content;
+    }
+</style>
+
+{% endblock %}
