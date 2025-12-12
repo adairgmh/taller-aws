@@ -81,7 +81,8 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+MEDIA_URL = "/media/"
 
 LOGIN_REDIRECT_URL = 'lista_alumnos'
 LOGIN_URL = 'login'
